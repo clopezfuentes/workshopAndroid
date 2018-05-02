@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         val place = intent.getSerializableExtra("place") as? Place
-
         name.text = place?.name
         description.text = place?.description
 

@@ -1,5 +1,6 @@
 package com.tw.workshopandroid1.views
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -16,12 +17,12 @@ class FormPlace : AppCompatActivity() {
         buttonRegister.setOnClickListener {
             val name = name.text.toString()
             val description = description.text.toString()
-            val place = Place(name,description)
+            val place = Place(name, description)
 
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("place",place)
+            intent.putExtra("place", place)
             startActivity(intent)
-
+            finishActivity(Activity.RESULT_OK)
         }
 
     }
