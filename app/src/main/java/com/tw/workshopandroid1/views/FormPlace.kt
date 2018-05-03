@@ -14,15 +14,16 @@ class FormPlace : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_place)
 
+
         buttonRegister.setOnClickListener {
-            val name = name.text.toString()
-            val description = description.text.toString()
+            val name = nameText.text.toString()
+            val description = descriptionText.text.toString()
             val place = Place(name, description)
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent()
             intent.putExtra("place", place)
-            startActivity(intent)
-            finishActivity(Activity.RESULT_OK)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
         }
 
     }
